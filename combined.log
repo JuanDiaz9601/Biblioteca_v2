@@ -1,2 +1,10 @@
 {"level":"info","message":"server init","service":"server-api"}
 {"level":"info","message":"Connected to MongoDB","service":"server-api"}
+{"level":"info","message":"server init","service":"server-api"}
+{"level":"error","service":"server-api"}
+{"level":"info","message":"server init","service":"server-api"}
+{"level":"info","message":"Connected to MongoDB","service":"server-api"}
+{"level":"info","message":"server init on port: 8001","service":"server-api"}
+{"level":"info","message":"Connected to MongoDB","service":"server-api"}
+{"level":"info","message":"server init on port: 8001","service":"server-api"}
+{"level":"info","message":"Connected to MongoDB","service":"server-api"}

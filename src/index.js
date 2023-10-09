@@ -4,9 +4,13 @@ const { connect } = require("./db/db");
 const dotenv = require("dotenv");
 dotenv.config();
 
+
 const app = express();
 
+app.use(express.json());
+app.use("/api/v1", require("./routers/users.route"));
+
 app.listen(process.env.PORT, async () => {
-  logger.info("server init");
+  logger.info(`server init on port: ${process.env.PORT}`);
   await connect();
 });
