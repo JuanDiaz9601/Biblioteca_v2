@@ -1,0 +1,2 @@
+//config server express, importar archivo db.js 
+dentro del servidor e iniciar la base de datos en el servidor
