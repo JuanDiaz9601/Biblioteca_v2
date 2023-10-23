@@ -1,17 +1,40 @@
-const UsersModel = require('../models/users.model');
+const UsersModel = require("../models/users.model");
 
-const create = async (fullName) => {
-    const newUser = new UsersModel({
-        fullName
-    });
-    return await newUser.save();
+const create = async (fullName, email) => {
+  const newUser = new UsersModel({
+    fullName,
+    email,
+  });
+
+  return await newUser.save();
 };
 
-const getAll = async () => {
-    return await UsersModel.find();
-}
+const getAll = async (limit, start) => {
+  return await UsersModel.find({ states: true }).limit(limit).skip(start);
+};
+
+const getOne = async (id) => {
+  return await UsersModel.findById(id);
+};
+
+const upDate = async (id, fullName) => {
+  return await UsersModel.findByIdAndUpdate(id, fullName, { new: true });
+};
+
+const deleteUser = async (id) => {
+  return await UsersModel.findByIdAndUpdate(
+    id,
+    { states: false },
+    {
+      new: true,
+    }
+  );
+};
 
 module.exports = {
-    create,
-    getAll
-}
+  create,
+  getAll,
+  getOne,
+  upDate,
+  deleteUser,
+};
