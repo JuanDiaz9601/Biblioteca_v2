@@ -1,16 +1,26 @@
-const BooksSchema = require("../models/books.model");
+const Books = require("../models/books.model");
 
-const createBooks = async (title, sbn, author, genre) => {
-  const newBook = BooksSchema({
+const create = async ({ title, sbn, author, genre }) => {
+  const newBook = Books({
     title,
     sbn,
     author,
     genre,
   });
 
-  return await newBook;
+  return await newBook.save();
+};
+
+const getAll = async () => {
+  return await Books.find();
+};
+
+const getOne = async (id) => {
+  return await Books.findById(id);
 };
 
 module.exports = {
-  createBooks,
+  create,
+  getAll,
+  getOne,
 };
